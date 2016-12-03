@@ -69,10 +69,10 @@ function c(arg1, arg2) {
 }
 
 function d(num) {
-    var object = {
+    var obj = {
         a: num
     };
-    return object;
+    return obj;
 }
 
 function e(arg) {
@@ -97,10 +97,12 @@ function g(arg) {
     }
 }
 
-function h() {
-    return (function() {
-        return 5;
-    })();
+function h(funcName) {
+    if (typeof funcName == 'function') {
+        return funcName();
+    } else {
+        return 'The argument must be function';
+    }
 }
 
 function j(arr) {
@@ -111,10 +113,10 @@ function j(arr) {
     return sum;
 }
 
-function k(object) {
+function k(obj) {
     var sum = 0;
-    for (var key in object) {
-        sum = sum + object[key];
+    for (var key in obj) {
+        sum = sum + obj[key];
     }
     return sum;
 }
